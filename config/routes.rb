@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # get 'auth/:provider/callback', to 'sessions#create'
   match '/auth/:provider/callback', to: 'sessions#create', via: :get
+  match '/auth/failure', :to => 'sessions#failure', via: :get
 
   delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 
